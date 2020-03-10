@@ -148,7 +148,7 @@ data:
         @type postgres
         host {{ cluster_cfg['postgresql']['host'] }}
         port {{ cluster_cfg['postgresql']['port'] }}
-        user {{ cluster_cfg['postgresql']['user'] }}
+        username {{ cluster_cfg['postgresql']['user'] }}
         password {{ cluster_cfg['postgresql']['passwd'] }}
         database {{ cluster_cfg['postgresql']['db'] }}
         table fc_objectsnapshots

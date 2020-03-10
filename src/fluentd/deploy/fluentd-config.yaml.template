@@ -145,14 +145,19 @@ data:
       </store>
 {% if (cluster_cfg['internal-storage']['enable']) and (cluster_cfg['postgresql']['enable']) %}
       <store>
-        @type pgjson
+        @type postgres
         host {{ cluster_cfg['postgresql']['host'] }}
         port {{ cluster_cfg['postgresql']['port'] }}
         user {{ cluster_cfg['postgresql']['user'] }}
         password {{ cluster_cfg['postgresql']['passwd'] }}
         database {{ cluster_cfg['postgresql']['db'] }}
         table fc_objectsnapshots
-        record_col record
+        columns record
+        format json
+        include_tag_key yes
+        tag_key tag
+        include_time_key yes
+        time_key time
         <buffer>
           @type memory
           flush_mode immediate

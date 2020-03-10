@@ -23,6 +23,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
  && apk add --no-cache --update libpq \
  && sudo gem install fluent-plugin-elasticsearch \
  && sudo gem install fluent-plugin-concat \
+ && sudo gem install fluent-plugin-postgres \
  && sudo gem install rake
 
 # Build fluent-plugin-pgjson from scratch
